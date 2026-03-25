@@ -1,0 +1,112 @@
+.section {
+  min-height: 100vh;
+  padding: 120px 48px;
+}
+
+.header {
+  max-width: 600px;
+  margin-bottom: 80px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 24px;
+  max-width: 1200px;
+}
+
+/* ── Card ───────────────────────────────────────── */
+.card {
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  border-radius: 24px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  transition:
+    transform 0.35s var(--ease-spring),
+    box-shadow 0.35s,
+    border-color 0.25s;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  transform-style: preserve-3d;
+}
+
+.shine {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15) 50%, transparent);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ── Preview ────────────────────────────────────── */
+.preview {
+  height: 220px;
+  position: relative;
+  overflow: hidden;
+}
+
+.previewGradient {
+  position: absolute;
+  inset: 0;
+  opacity: 0.7;
+  transition: opacity 0.4s;
+}
+.card:hover .previewGradient { opacity: 0.9; }
+
+.previewEmoji {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 64px;
+  transition: transform 0.4s var(--ease), filter 0.4s;
+}
+.card:hover .previewEmoji { transform: scale(1.08); filter: brightness(1.15); }
+
+/* ── Body ───────────────────────────────────────── */
+.body { padding: 28px; }
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 10px;
+}
+
+.desc {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+.links { display: flex; gap: 12px; }
+
+.link {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--blue-bright);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.2s, gap 0.2s;
+}
+.link:hover { color: var(--text); gap: 10px; }
+
+@media (max-width: 768px) {
+  .section { padding: 100px 24px; }
+  .grid { grid-template-columns: 1fr; }
+}

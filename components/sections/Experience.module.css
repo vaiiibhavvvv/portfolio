@@ -1,0 +1,120 @@
+.section {
+  min-height: 100vh;
+  padding: 120px 48px;
+}
+
+.header {
+  max-width: 600px;
+  margin-bottom: 80px;
+}
+
+/* ── Timeline ───────────────────────────────────── */
+.timeline {
+  max-width: 760px;
+  position: relative;
+  padding-left: 40px;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(to bottom, var(--blue), rgba(79, 142, 247, 0.1));
+}
+
+/* ── Item ───────────────────────────────────────── */
+.item {
+  position: relative;
+  margin-bottom: 48px;
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+}
+
+.visible {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+.dot {
+  position: absolute;
+  left: -47px;
+  top: 6px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 2px solid var(--blue);
+  box-shadow: 0 0 12px rgba(79, 142, 247, 0.5);
+  transition: box-shadow 0.3s;
+}
+.item:hover .dot { box-shadow: 0 0 24px rgba(79, 142, 247, 0.85); }
+
+/* ── Card ───────────────────────────────────────── */
+.card {
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  padding: 28px 32px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: background 0.25s, border-color 0.25s, transform 0.3s var(--ease-spring);
+}
+.item:hover .card {
+  background: var(--glass-hover);
+  border-color: rgba(79, 142, 247, 0.2);
+  transform: translateX(6px);
+}
+
+.period {
+  font-size: 12px;
+  letter-spacing: 0.15em;
+  color: var(--blue);
+  font-weight: 500;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.role {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 4px;
+}
+
+.company {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
+
+.desc {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.75;
+}
+
+.skillTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.skillTag {
+  font-size: 11px;
+  padding: 3px 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 6px;
+  color: var(--text-dim);
+  letter-spacing: 0.04em;
+}
+
+@media (max-width: 768px) {
+  .section { padding: 100px 24px; }
+}
