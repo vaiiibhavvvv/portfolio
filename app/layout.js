@@ -17,12 +17,12 @@ const dmSans = DM_Sans({
 });
 
 export const metadata = {
-  title: 'Alex Chen — Creative Developer',
+  title: 'Vaibhav Singh',
   description:
-    'Creative Developer & 3D Designer. I build immersive web experiences that blur the line between design and technology.',
+    'Creative Developer. I build immersive web experiences that blur the line between design and technology.',
   keywords: ['developer', 'portfolio', 'three.js', 'next.js', '3d', 'webgl'],
   openGraph: {
-    title: 'Alex Chen — Creative Developer',
+    title: 'Vaibhav Singh — Creative Developer',
     description: 'Crafting digital experiences beyond reality.',
     type: 'website',
   },
